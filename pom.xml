@@ -28,7 +28,7 @@
             <artifactId>kafka-streams</artifactId>
             <version>${kafka.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+        <!-- https://mvnrepository.com/artifavct/org.slf4j/slf4j-log4j12 -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
@@ -40,8 +40,6 @@
             <artifactId>json</artifactId>
             <version>20210307</version>
         </dependency>
-
-
     </dependencies>
     <build>
         <plugins>
@@ -55,7 +53,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.isidora.kafka.Pipe</mainClass>
+                            <mainClass>com.isidora.kafka.UniqueUsersCounter</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -67,6 +65,23 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>my-execution</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.isidora.kafka.UniqueUsersCounter</mainClass>
                 </configuration>
             </plugin>
         </plugins>

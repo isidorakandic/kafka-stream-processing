@@ -7,7 +7,7 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
-public class PipeTest
+public class UniqueUsersCounterTest
     extends TestCase
 {
     /**
@@ -15,7 +15,7 @@ public class PipeTest
      *
      * @param testName name of the test case
      */
-    public PipeTest(String testName )
+    public UniqueUsersCounterTest(String testName )
     {
         super( testName );
     }
@@ -25,7 +25,7 @@ public class PipeTest
      */
     public static Test suite()
     {
-        return new TestSuite( PipeTest.class );
+        return new TestSuite( UniqueUsersCounterTest.class );
     }
 
     /**
